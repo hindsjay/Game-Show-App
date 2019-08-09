@@ -39,7 +39,6 @@ h2 {
   text-transform: uppercase;
   font-family: 'Open Sans', sans-serif;
   font-size: var(--font-size-large);
-  margin: 0;
 }
 
 button {
@@ -53,6 +52,7 @@ button {
   -webkit-transition: var(--transition);
   -o-transition: var(--transition);
   transition: var(--transition);
+  cursor: pointer;
 }
 
 .main-container {
@@ -86,10 +86,12 @@ button {
   color: transparent;
   background: var(--color-neutral-light);
   border-radius: 5px;
+  font-family: 'Open Sans', sans-serif;
+  margin-top: 10px;
 }
 
 .space {
-  width: 15px;
+  width: 35px;
 }
 
 .show {
