@@ -76,6 +76,18 @@ function checkLetter(pressedButton) {
 };
 
 
+function checkWin() {
+  let numberOfLetters = document.querySelectorAll('.letter').length;
+  let numberOfLettersShown = document.querySelectorAll('.show').length;
+
+  if (numberOfLetters === numberOfLettersShown) {
+    console.log('You Win!');
+  } else if (missed >= 5) {
+    console.log('You Lose!');
+  }
+};
+
+
 keyboardButtons.addEventListener('click', (event) => {
   const buttonPressed = event.target;
   if (buttonPressed.tagName === 'BUTTON') {
@@ -95,4 +107,6 @@ keyboardButtons.addEventListener('click', (event) => {
       missed += 1;
     }
   }
+
+  checkWin();
 });
