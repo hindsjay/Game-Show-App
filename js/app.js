@@ -54,7 +54,7 @@ function getRandomPhraseArray(array, max = 10) {
 
 
 function addPhraseToDisplay(array) {
-  let ul = document.getElementById('phrase').firstElementChild;
+  let ul = phrase.firstElementChild;
   array.forEach( (element) => {
     let li = document.createElement('li');
     li.textContent = element;
