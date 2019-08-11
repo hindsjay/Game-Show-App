@@ -115,7 +115,7 @@ keyboardButtons.addEventListener('click', (event) => {
     if (checkLetterResult === null) {
       const olFirstChild = ol.firstChild;
       let li = document.createElement('li');
-      li.innerHTML = '<img src="images/lostHeart.png" height="35px" width="30px"></img>';
+      li.innerHTML = '';
 
       ol.removeChild(ol.lastElementChild);
       ol.insertBefore(li, olFirstChild);
@@ -146,11 +146,11 @@ function resetGame() {
   phrase.appendChild(ul);
 
   ol.innerHTML = `
-    <li><img src="images/liveHeart.png" height="35px" width="30px"></img></li>
-    <li><img src="images/liveHeart.png" height="35px" width="30px"></img></li>
-    <li><img src="images/liveHeart.png" height="35px" width="30px"></img></li>
-    <li><img src="images/liveHeart.png" height="35px" width="30px"></img></li>
-    <li><img src="images/liveHeart.png" height="35px" width="30px"></img></li>
+    <li class="tries"><img src="images/basketball_icon.jpg" height="45px" width="40px"></li>
+    <li class="tries"><img src="images/basketball_icon.jpg" height="45px" width="40px"></li>
+    <li class="tries"><img src="images/basketball_icon.jpg" height="45px" width="40px"></li>
+    <li class="tries"><img src="images/basketball_icon.jpg" height="45px" width="40px"></li>
+    <li class="tries"><img src="images/basketball_icon.jpg" height="45px" width="40px"></li>
   `;
 
   const randomPhraseArray = getRandomPhraseArray(gamePhrases);
