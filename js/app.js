@@ -9,6 +9,7 @@ const loseOverlayPage = document.querySelector('.result-overlay-lose');
 const startButton = document.querySelector('.btn__reset');
 const winPlayAgainButton = document.querySelector('.play-again-button-win');
 const losePlayAgainButton = document.querySelector('.play-again-button-lose');
+const ol = document.querySelector('.ol-element');
 
 // event listener for start button
 startButton.addEventListener('click', () => {
@@ -112,7 +113,6 @@ keyboardButtons.addEventListener('click', (event) => {
     const checkLetterResult = checkLetter(buttonText);
 
     if (checkLetterResult === null) {
-      const ol = document.querySelector('.ol-element');
       const olFirstChild = ol.firstChild;
       let li = document.createElement('li');
       li.innerHTML = '<img src="images/lostHeart.png" height="35px" width="30px"></img>';
@@ -145,7 +145,6 @@ function resetGame() {
   let ul = document.createElement('ul');
   phrase.appendChild(ul);
 
-  const ol = document.querySelector('.ol-element');
   ol.innerHTML = `
     <li><img src="images/liveHeart.png" height="35px" width="30px"></img></li>
     <li><img src="images/liveHeart.png" height="35px" width="30px"></img></li>
