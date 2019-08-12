@@ -117,7 +117,7 @@ keyboardButtons.addEventListener('click', (event) => {
     if (checkLetterResult === null) {
       const olFirstChild = ol.firstChild;
       let li = document.createElement('li');
-      li.innerHTML = '';
+      li.innerHTML = '<img src="images/basketball-icon-gray.png" height="45px" width="40px">';
       ol.removeChild(ol.lastElementChild);
       ol.insertBefore(li, olFirstChild);
 
@@ -146,11 +146,11 @@ function resetGame() {
   let ul = document.createElement('ul');
   phrase.appendChild(ul);
   ol.innerHTML = `
-    <li class="tries"><img src="images/basketball_icon.jpg" height="45px" width="40px"></li>
-    <li class="tries"><img src="images/basketball_icon.jpg" height="45px" width="40px"></li>
-    <li class="tries"><img src="images/basketball_icon.jpg" height="45px" width="40px"></li>
-    <li class="tries"><img src="images/basketball_icon.jpg" height="45px" width="40px"></li>
-    <li class="tries"><img src="images/basketball_icon.jpg" height="45px" width="40px"></li>
+    <li class="tries"><img src="images/basketball-icon.png" height="45px" width="40px"></li>
+    <li class="tries"><img src="images/basketball-icon.png" height="45px" width="40px"></li>
+    <li class="tries"><img src="images/basketball-icon.png" height="45px" width="40px"></li>
+    <li class="tries"><img src="images/basketball-icon.png" height="45px" width="40px"></li>
+    <li class="tries"><img src="images/basketball-icon.png" height="45px" width="40px"></li>
   `;
 
   initializePhrase();
