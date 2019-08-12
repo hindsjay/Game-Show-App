@@ -2,28 +2,19 @@
 // variable declarations
 const keyboardButtons = document.getElementById('qwerty');
 const phrase = document.getElementById('phrase');
-let missed = 0;
 const overlayPage = document.getElementById('overlay');
-const winOverlayPage = document.querySelector('.result-overlay-win');
-const loseOverlayPage = document.querySelector('.result-overlay-lose');
-const startButton = document.querySelector('.btn__reset');
-const winPlayAgainButton = document.querySelector('.play-again-button-win');
-const losePlayAgainButton = document.querySelector('.play-again-button-lose');
+const overlayButton = document.querySelector('.btn__reset');
 const ol = document.querySelector('.ol-element');
+let missed = 0;
 
-// event listener for start button
-startButton.addEventListener('click', () => {
-  overlayPage.style.display = 'none';
-});
-
-// event listeners for win/lose overlays --> click to play again
-winPlayAgainButton.addEventListener('click', () => {
-  resetGame();
-  winOverlayPage.style.display = "none";
-});
-losePlayAgainButton.addEventListener('click', () => {
-  resetGame();
-  loseOverlayPage.style.display = "none";
+// event listener for overlay button
+overlayButton.addEventListener('click', () => {
+  if (overlayPage.classList.contains('start')) {
+    overlayPage.style.display = 'none';
+  } else {
+    resetGame();
+    overlayPage.style.display = 'none';
+  }
 });
 
 
@@ -95,11 +86,18 @@ function checkLetter(pressedButton) {
 function checkWin() {
   let numberOfLetters = document.querySelectorAll('.letter').length;
   let numberOfLettersShown = document.querySelectorAll('.show').length;
+  let overlayTitle = document.querySelector('.title');
 
-  if (numberOfLetters === numberOfLettersShown) {
-    winOverlayPage.style.display = "flex";
-  } else if (missed >= 5) {
-    loseOverlayPage.style.display = "flex";
+  if (numberOfLetters === numberOfLettersShown || missed >=5) {
+    if (numberOfLetters === numberOfLettersShown) {
+      overlayPage.className = 'win';
+      overlayTitle.textContent = 'You Win!!!';
+    } else if (missed >= 5) {
+      overlayPage.className = 'lose';
+      overlayTitle.textContent = 'Sorry! You Lose :(';
+    }
+    overlayButton.textContent = 'Play Again?';
+    overlayPage.style.display = 'flex';
   }
 };
 
