@@ -32,6 +32,9 @@ const gamePhrases = [
   'indiana pacers'
 ];
 
+
+initializePhrase();
+
 /*
 array has 10 values setting max at 10 since Math.floor is exclusive of the max value and inclusive
 of the min which is 0 in this case.  Arrays are zero-based indexes so this should work to include
@@ -60,9 +63,10 @@ function addPhraseToDisplay(array) {
   });
 };
 
-
-const randomPhraseArray = getRandomPhraseArray(gamePhrases);
-addPhraseToDisplay(randomPhraseArray);
+function initializePhrase() {
+  const randomPhraseArray = getRandomPhraseArray(gamePhrases);
+  addPhraseToDisplay(randomPhraseArray);
+};
 
 
 function checkLetter(pressedButton) {
@@ -151,7 +155,6 @@ function resetGame() {
     <li class="tries"><img src="images/basketball_icon.jpg" height="45px" width="40px"></li>
   `;
 
-  const randomPhraseArray = getRandomPhraseArray(gamePhrases);
-  addPhraseToDisplay(randomPhraseArray);
+  initializePhrase();
   missed = 0;
 }
