@@ -114,7 +114,6 @@ keyboardButtons.addEventListener('click', (event) => {
       const olFirstChild = ol.firstChild;
       let li = document.createElement('li');
       li.innerHTML = '';
-
       ol.removeChild(ol.lastElementChild);
       ol.insertBefore(li, olFirstChild);
 
@@ -142,7 +141,6 @@ function resetGame() {
   phrase.removeChild(phrase.firstElementChild);
   let ul = document.createElement('ul');
   phrase.appendChild(ul);
-
   ol.innerHTML = `
     <li class="tries"><img src="images/basketball_icon.jpg" height="45px" width="40px"></li>
     <li class="tries"><img src="images/basketball_icon.jpg" height="45px" width="40px"></li>
