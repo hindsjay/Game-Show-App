@@ -63,6 +63,7 @@ function addPhraseToDisplay(array) {
   });
 };
 
+
 function initializePhrase() {
   const randomPhraseArray = getRandomPhraseArray(gamePhrases);
   addPhraseToDisplay(randomPhraseArray);
@@ -131,29 +132,23 @@ keyboardButtons.addEventListener('click', (event) => {
 
 
 function resetGame() {
-  keyboardButtons.innerHTML = `
-    <div class="keyrow">
-      <button>Q</button><button>W</button><button>E</button><button>R</button><button>T</button><button>Y</button><button>U</button><button>I</button><button>O</button><button>P</button>
-    </div>
-    <div class="keyrow">
-      <button>A</button><button>S</button><button>D</button><button>F</button><button>G</button><button>H</button><button>J</button><button>K</button><button>L</button>
-    </div>
-    <div class="keyrow">
-      <button>Z</button><button>X</button><button>C</button><button>V</button><button>B</button><button>N</button><button>M</button>
-    </div>
-  `;
+  const buttonElements = document.getElementsByTagName('BUTTON');
+  const imageElements = document.getElementsByTagName('IMG');
+
+  for (let i = 0; i < buttonElements.length; i++) {
+    if (buttonElements[i].hasAttribute('disabled')) {
+      buttonElements[i].classList.remove('chosen');
+      buttonElements[i].removeAttribute('disabled');
+    }
+  }
 
   phrase.removeChild(phrase.firstElementChild);
   let ul = document.createElement('ul');
   phrase.appendChild(ul);
 
-  ol.innerHTML = `
-    <li class="tries"><img src="images/basketball-icon.png" height="45px" width="40px"></li>
-    <li class="tries"><img src="images/basketball-icon.png" height="45px" width="40px"></li>
-    <li class="tries"><img src="images/basketball-icon.png" height="45px" width="40px"></li>
-    <li class="tries"><img src="images/basketball-icon.png" height="45px" width="40px"></li>
-    <li class="tries"><img src="images/basketball-icon.png" height="45px" width="40px"></li>
-  `;
+  for (let i = 0; i < imageElements.length; i++) {
+    imageElements[i].setAttribute('src', 'images/basketball-icon.png');
+  }
 
   initializePhrase();
   missed = 0;
